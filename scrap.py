@@ -31,8 +31,8 @@ def parseSoup(s, query):
             continue
     return result
 
-
-r = google("chete karda mp3")
-for x in r:
-    print x["fuzz"], x["text"], x["href"] 
+if __name__ == "__main__":
+    r = google("chete karda mp3")
+    for x in r:
+        print x["fuzz"], x["text"], x["href"] 
 #print soup.prettify()
