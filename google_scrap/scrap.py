@@ -15,7 +15,7 @@ def google(query, cleaned=0):
             for x in res:
                 if x["fuzz"] > 50 and x["text"] != "Cached":
                     cleanedResults.append(x)
-            return cleanedResults
+            return cleanedResults.sort()
     return res
 
 def parseSoup(s, query):
@@ -33,5 +33,5 @@ def parseSoup(s, query):
 if __name__ == "__main__":
     r = google("chete karda mp3", 1)
     for x in r:
-        print x["fuzz"], x["text"], x["href"] 
+        print x["fuzz"], x["text"], x["href"]
 #print soup.prettify()
