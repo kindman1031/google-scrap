@@ -17,7 +17,7 @@ def google(query, cleaned=0):
         host = _url.scheme + '://' + _url.netloc + '/'
         r = requests.get(url, headers={"Accept" : "*/*", "User-Agent" : "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36 googlescrap/0.1.0"})
         if r.status_code == 200:
-            res = parseSoup(BeautifulSoup(r.text), query, host)
+            res = parseSoup(BeautifulSoup(r.text, 'html5lib'), query, host)
             if cleaned == 1:
                 cleanedResults = []
                 for x in res:
